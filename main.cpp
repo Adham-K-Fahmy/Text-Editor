@@ -1,10 +1,30 @@
 #include <iostream>
+#include <fstream>
 #include "texteditor.h"
 
 using namespace std;
 
 int main()
 {
+    fstream file;
+    string fileName, data="";
+    char text[1000000];
+    cout << "Please enter file name: ";
+    cin >> fileName;
+    file.open(fileName+".txt", ios::in);
+    if(file.is_open()){
+        cout << "File opened" << endl;
+    }
+    else{
+        file.open(fileName+".txt", ios::out);
+        cout << "The file " << fileName << " was not found, we created it for you" << endl;
+    }
+    while(!file.eof()){
+        file.getline(text, 1000000, '\n');
+        data += text;
+        data += '\n';
+    }
+    file.close();
     while(true){
         cout << "1. Add new text to the end of the file" << endl;
         cout << "2. Display the content of the file" << endl;
@@ -26,19 +46,19 @@ int main()
         cin >> choice;
         switch(choice){
         case 1:
-            cout << 1 << endl;
+            addNewText(data);
             break;
         case 2:
-            cout << 2 << endl;
+            printFile(fileName);
             break;
         case 3:
-            cout << 3 << endl;
+            emptyFile(fileName);
             break;
         case 4:
-            cout << 4 << endl;
+            encryptFile(data);
             break;
         case 5:
-            cout << 5 << endl;
+            decryptFile(data);
             break;
         case 6:
             cout << 6 << endl;
