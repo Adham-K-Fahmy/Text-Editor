@@ -1,10 +1,3 @@
-#include <iostream>
-#include <conio.h>
-#include <fstream>
-#include "texteditor.h"
-
-using namespace std;
-
 void addNewText(string &data){
     string userInput;
     do{
