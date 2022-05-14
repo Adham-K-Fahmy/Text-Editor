@@ -136,7 +136,7 @@ string firstToUpper (string line)
     }
     for (int i = 0 ; i < line.length() ; i++)
     {
-        if (line[i] == ' ')
+        if (line[i] == ' ' || line[i] == '\n')
         {
             if (line[i+1] > 96 && line[i+1] < 123)
             {
