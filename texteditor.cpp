@@ -127,3 +127,22 @@ string toLower(string line)
     }
     return line;
 }
+
+string firstToUpper (string line)
+{
+    if (line[0] > 96 && line[0] < 123)
+    {
+        line[0] -= 32;
+    }
+    for (int i = 0 ; i < line.length() ; i++)
+    {
+        if (line[i] == ' ')
+        {
+            if (line[i+1] > 96 && line[i+1] < 123)
+            {
+                line[i+1] -= 32;
+            }
+        }
+    }
+    return line;
+}
