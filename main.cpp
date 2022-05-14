@@ -1,4 +1,5 @@
 #include "texteditor.h"
+#include "SourceCode.cpp"
 int main()
 {
     fstream file;
