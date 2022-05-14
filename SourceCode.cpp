@@ -103,7 +103,7 @@ void countWord()
             counter++;
         }
     }
-    cout << counter;
+    cout << "The word exist in file " <<  counter << " times \n\n";
 }
 
 
