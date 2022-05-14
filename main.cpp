@@ -72,8 +72,10 @@ int main()
             cout << 10 << endl;
             break;
         case 11:
+            data = toUpper(data);
             split(data);
             countWord();
+            data = toLower(data);
             break;
         case 12:
             data = toUpper(data);
