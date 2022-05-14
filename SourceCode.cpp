@@ -139,3 +139,15 @@ string firstToUpper (string line)
     }
     return line;
 }
+
+void save(string data)
+{
+    fstream myFile;
+    string saveFile;
+    cout << "Enter the file you want to save in: ";
+    cin >> saveFile;
+    myFile.open(saveFile+".txt" , ios :: out);
+    myFile << data;
+    myFile.close();
+}
+

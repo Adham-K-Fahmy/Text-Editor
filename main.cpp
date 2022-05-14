@@ -88,7 +88,7 @@ int main()
             data = firstToUpper(data);
             break;
         case 15:
-            cout << 15 << endl;
+            save(data);
             break;
         case 16:
             return 0;

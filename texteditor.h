@@ -26,4 +26,5 @@ void countWord();
 string toUpper(string line);
 string toLower(string line);
 string firstToUpper (string line);
+void save(string data);
 #endif // TEXTEDITOR_H_INCLUDED
