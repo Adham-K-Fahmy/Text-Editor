@@ -76,16 +76,18 @@ int main()
             cout << 10 << endl;
             break;
         case 11:
-            cout << 11 << endl;
+            split(data);
+            countWord();
             break;
         case 12:
-            cout << 12 << endl;
+            data = toUpper(data);
             break;
         case 13:
-            cout << 13 << endl;
+            data = toLower(data);
             break;
         case 14:
-            cout << 14 << endl;
+            data = toLower(data);
+            data = firstToUpper(data);
             break;
         case 15:
             cout << 15 << endl;
