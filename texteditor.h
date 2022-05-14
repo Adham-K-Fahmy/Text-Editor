@@ -2,10 +2,13 @@
 #define TEXTEDITOR_H_INCLUDED
 
 #include <iostream>
+#include <conio.h>
 #include <fstream>
 #include <string>
+#include "texteditor.h"
 
 using namespace std;
+
 
 struct data
 {
