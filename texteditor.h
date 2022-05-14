@@ -1,6 +1,10 @@
 #ifndef TEXTEDITOR_H_INCLUDED
 #define TEXTEDITOR_H_INCLUDED
 
+#include <iostream>
+#include <fstream>
+#include <string>
+
 using namespace std;
 
 struct data

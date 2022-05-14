@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
 #include "texteditor.h"
-
-using namespace std;
-
 int main()
 {
     fstream file;
