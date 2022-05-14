@@ -67,3 +67,63 @@ void decryptFile(string &data){
         data[x] = char(90-data[x]+65);
     }
 }
+
+void split (string line)
+{
+    static int index = 0;
+    string word = "";
+    for (char x : line)
+    {
+        if (x == ' ' || x == '\n')
+        {
+            information[index].lineData = word;
+            word = "";
+            index++;
+        }
+        else
+        {
+            word += x;
+        }
+    }
+    index++;
+    information[index].lineData = word;
+}
+
+void countWord()
+{
+    int counter = 0;
+    string searchWord;
+    cout << "Enter the search word: ";
+    cin >> searchWord;
+    searchWord = toUpper(searchWord);
+    for (int i = 0 ; i < 10000 ; i++)
+    {
+        if (information[i].lineData == searchWord)
+        {
+            counter++;
+        }
+    }
+    cout << counter;
+}
+
+
+string toUpper(string line)
+{
+    for (int i = 0 ; i < line.length(); i++)
+    {
+        if (line[i] > 96 && line[i] < 123)
+            line[i] -= 32;
+    }
+    return line;
+}
+
+
+string toLower(string line)
+{
+     for (int i = 0; i < line.length(); i++)
+    {
+        if (line[i] > 64 && line[i] < 91 )
+            line[i] += 32;
+    }
+    return line;
+}
