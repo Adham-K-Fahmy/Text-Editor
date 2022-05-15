@@ -1,3 +1,4 @@
+#include "texteditor.h"
 void addNewText(string &data){
     string userInput;
     do{

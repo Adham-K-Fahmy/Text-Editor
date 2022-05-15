@@ -2,6 +2,7 @@
 #define TEXTEDITOR_H_INCLUDED
 
 #include <iostream>
+#include <stdio.h>
 #include <conio.h>
 #include <fstream>
 #include <string>
