@@ -10,11 +10,11 @@
 using namespace std;
 
 
-struct data
+struct splitWords
 {
     string lineData;
 };
-data information[10000];
+splitWords information[10000];
 
 void addNewText(string &data);
 void printFile(string fileName);
