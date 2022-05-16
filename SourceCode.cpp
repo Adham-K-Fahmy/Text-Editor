@@ -26,17 +26,7 @@ void addNewText(string &data){
     data += userInput;
 }
 
-void printFile(string fileName){
-    fstream file;
-    string data;
-    char text[1000000];
-    file.open(fileName+".txt", ios::in);
-    while(!file.eof()){
-        file.getline(text, 1000000, '\n');
-        data += text;
-        data += '\n';
-    }
-    file.close();
+void printFile(string data){
     cout << data << endl;
 }
 
@@ -62,40 +52,78 @@ void decryptFile(string &data){
     }
 }
 
-void split (string line)
+void mergeFiles(string &data)
 {
-    static int index = 0;
-    string word = "";
-    for (char x : line)
-    {
-        if (x == ' ' || x == '\n')
-        {
-            information[index].lineData = word;
-            word = "";
-            index++;
-        }
-        else
-        {
-            word += x;
-        }
-    }
-    index++;
-    information[index].lineData = word;
+  fstream f1;
+  string Fname1, text;
+  cout <<"Enter the file name: ";
+  cin >> Fname1;
+  f1.open(Fname1+".txt",ios::in);//opening file in reading mode
+  while(getline(f1, text)){ //read lines from file object and put it into string.
+         continue;
+  }
+  data += text;
+  f1.close();
 }
 
-void countWord()
+void numberOfWords(string data)
 {
-    int counter = 0;
+    int nWords = 0;
+    for(int x = 0; x < data.length(); x++){
+        if((data[x] == ' ' || data[x] == '\n') && x > 0 && data[x-1] != ' ' && data[x-1] != '\n'){
+            nWords++;
+        }
+    }
+    if(data[data.length()-1] != ' ' && data[data.length()-1] != '\n'){
+        nWords++;
+    }
+    cout<<"words = "<< nWords <<endl;
+}
+
+void numberOfCharacters(string data)
+{
+ cout<<"Number of characters = "<< data.length() <<endl;
+}
+
+void numberOfLines(string data)
+{
+  int lines = 1;
+  for(int x = 0; x < data.size(); x++){
+    if(data[x] == '\n'){
+        lines++;
+    }
+  }
+  cout <<"Lines = "<< lines << endl;
+}
+
+void searchForWord(string data)
+ {
+    string wordToFind;
+    cout<<"\nEnter Word to find: ";
+    cin>> wordToFind;
+    wordToFind = toLower(wordToFind);
+    data = toLower(data);
+    if(data.find(wordToFind) != string::npos){
+        cout << "Word was found in the file" << endl;
+    }
+    else{
+        cout << "Word was not found in the file" << endl;
+    }
+}
+
+void countWord(string data)
+{
+    int counter = 0, ind = 0;
     string searchWord;
     cout << "Enter the search word: ";
     cin >> searchWord;
     searchWord = toUpper(searchWord);
-    for (int i = 0 ; i < 10000 ; i++)
-    {
-        if (information[i].lineData == searchWord)
-        {
-            counter++;
-        }
+    data = toUpper(data);
+    while(data.find(searchWord, ind) != string::npos){
+        counter++;
+        if(isalnum(data[data.find(searchWord, ind)-1]) || isalnum(data[data.find(searchWord, ind)+searchWord.length()]))
+            counter--;
+        ind = data.find(searchWord, ind)+1;
     }
     cout << "The word exist in file " <<  counter << " times \n\n";
 }
@@ -110,7 +138,6 @@ string toUpper(string line)
     }
     return line;
 }
-
 
 string toLower(string line)
 {
