@@ -10,20 +10,17 @@
 
 using namespace std;
 
-
-struct splitWords
-{
-    string lineData;
-};
-splitWords information[10000];
-
 void addNewText(string &data);
-void printFile(string fileName);
+void printFile(string data);
 void emptyFile(string fileName);
 void encryptFile(string &data);
 void decryptFile(string &data);
-void split (string line);
-void countWord();
+void mergeFiles(string &data);
+void numberOfWords(string data);
+void numberOfCharacters(string data);
+void numberOfLines(string data);
+void searchForWord(string data);
+void countWord(string data);
 string toUpper(string line);
 string toLower(string line);
 string firstToUpper (string line);
