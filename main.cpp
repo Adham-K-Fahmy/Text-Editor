@@ -45,7 +45,7 @@ int main()
             addNewText(data);
             break;
         case 2:
-            printFile(fileName);
+            printFile(data);
             break;
         case 3:
             emptyFile(fileName);
@@ -57,25 +57,22 @@ int main()
             decryptFile(data);
             break;
         case 6:
-            cout << 6 << endl;
+            mergeFiles(data);
             break;
         case 7:
-            cout << 7 << endl;
+            numberOfWords(data);
             break;
         case 8:
-            cout << 8 << endl;
+            numberOfCharacters(data);
             break;
         case 9:
-            cout << 9 << endl;
+            numberOfLines(data);
             break;
         case 10:
-            cout << 10 << endl;
+            searchForWord(data);
             break;
         case 11:
-            data = toUpper(data);
-            split(data);
-            countWord();
-            data = toLower(data);
+            countWord(data);
             break;
         case 12:
             data = toUpper(data);
